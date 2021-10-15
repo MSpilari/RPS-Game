@@ -17,11 +17,15 @@ describe('Home Page tests', () => {
 	})
 
 	it('Should render the home page correct', () => {
-		const titleElement = screen.getByText('Rock Paper Scissors')
+		const firstImage = screen.getByAltText('Rock Paper Scissor Logo')
+		const secondImage = screen.getByAltText(
+			'Rock Paper Scissor Lizard Spock Logo'
+		)
 		const firstButton = screen.getByTestId('original')
 		const secondButton = screen.getByTestId('bonus')
 
-		expect(titleElement).toBeInTheDocument()
+		expect(firstImage).toBeInTheDocument()
+		expect(secondImage).toBeInTheDocument()
 		expect(firstButton).toBeInTheDocument()
 		expect(secondButton).toBeInTheDocument()
 	})
