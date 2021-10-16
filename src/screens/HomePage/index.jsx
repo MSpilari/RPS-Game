@@ -1,12 +1,13 @@
 import RPSLogo from '../../assets/logo.svg'
 import RPSLSLogo from '../../assets/logo-bonus.svg'
+import { DefaultWrapper } from '../../components/wrappers/Default'
 import { Footer } from '../../components/UI/Footer'
 
-import { HomeWrapper, LogosWrapper, Logo, HomeMain, LinkStyled } from './styles'
+import { LogosWrapper, Logo, HomeMain, LinkStyled } from './styles'
 
 const HomePage = () => {
 	return (
-		<HomeWrapper>
+		<DefaultWrapper>
 			<LogosWrapper>
 				<Logo alt='Rock Paper Scissor Logo' src={RPSLogo} />
 				<Logo alt='Rock Paper Scissor Lizard Spock Logo' src={RPSLSLogo} />
@@ -20,7 +21,7 @@ const HomePage = () => {
 				</LinkStyled>
 			</HomeMain>
 			<Footer />
-		</HomeWrapper>
+		</DefaultWrapper>
 	)
 }
 

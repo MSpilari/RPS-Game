@@ -1,13 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-const HomeWrapper = styled.div`
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-`
 
 const LogosWrapper = styled.header`
 	display: flex;
@@ -15,6 +7,10 @@ const LogosWrapper = styled.header`
 	justify-content: space-evenly;
 	width: 50%;
 	margin: 0 auto;
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
 `
 
 const Logo = styled.img`
@@ -29,6 +25,11 @@ const HomeMain = styled.main`
 	justify-content: space-evenly;
 	width: 65%;
 	margin: 0 auto;
+
+	@media screen and (max-width: 768px) {
+		width: 90%;
+		margin: 0 auto;
+	}
 `
 
 const LinkStyled = styled(Link)`
@@ -37,10 +38,21 @@ const LinkStyled = styled(Link)`
 	padding: 10px 15px;
 	text-decoration: none;
 	border-radius: 8px;
+	font-size: 18px;
+
 	&:hover {
 		color: ${({ theme }) => theme.darkText};
 		border: 3px solid ${({ theme }) => theme.darkText};
 	}
+
+	@media screen and (max-width: 425px) {
+		font-size: 12px;
+		padding: 5px 10px;
+		display: flex;
+		flex-wrap: wrap;
+		width: 40%;
+		margin: 0 auto;
+	}
 `
 
-export { HomeWrapper, LogosWrapper, Logo, HomeMain, LinkStyled }
+export { LogosWrapper, Logo, HomeMain, LinkStyled }
