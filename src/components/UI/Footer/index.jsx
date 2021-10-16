@@ -1,6 +1,9 @@
+import { MyFooter } from './styles'
+import Logo from '../../../assets/LogoYB.svg'
+
 const Footer = () => {
 	return (
-		<footer>
+		<MyFooter>
 			<h6>
 				Feito por{' '}
 				<a
@@ -8,10 +11,10 @@ const Footer = () => {
 					target='_blank'
 					rel='noreferrer'
 				>
-					MSpilari
+					<img style={{ width: '100px' }} alt='Logo MSpilari' src={Logo} />
 				</a>
 			</h6>
-		</footer>
+		</MyFooter>
 	)
 }
 
