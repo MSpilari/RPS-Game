@@ -1,8 +1,8 @@
 const RockPaperScissorLogic = (playerChoice, houseChoice) => {
 	if (
-		(playerChoice === 'Rock' && houseChoice === 'Scissor') ||
+		(playerChoice === 'Rock' && houseChoice === 'Scissors') ||
 		(playerChoice === 'Paper' && houseChoice === 'Rock') ||
-		(playerChoice === 'Scissor' && houseChoice === 'Paper')
+		(playerChoice === 'Scissors' && houseChoice === 'Paper')
 	)
 		return 'Player Wins'
 	else if (playerChoice === houseChoice) return 'Draw'

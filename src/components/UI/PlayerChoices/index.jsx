@@ -6,7 +6,7 @@ const PlayerChoices = ({ changeStateFunc }) => {
 		<PlayerChoicesWrapper>
 			<Button name='rock' onClick={() => changeStateFunc('Rock')} />
 			<Button name='paper' onClick={() => changeStateFunc('Paper')} />
-			<Button name='scissors' onClick={() => changeStateFunc('Scissor')} />
+			<Button name='scissors' onClick={() => changeStateFunc('Scissors')} />
 		</PlayerChoicesWrapper>
 	)
 }
