@@ -1,17 +1,17 @@
 import { RockPaperScissorLogic } from '../utils/RockPaperScissors'
 
 describe('Testing the logic of the method RockPaperScissor', () => {
-	it('Should win the player, when he chooses Rock and House choose Scissor', () => {
+	it('Should win the player, when he chooses Rock and House choose Scissors', () => {
 		const playerChoose = 'Rock'
-		const houseChoose = 'Scissor'
+		const houseChoose = 'Scissors'
 
 		const result = RockPaperScissorLogic(playerChoose, houseChoose)
 
 		expect(result).toBe('Player Wins')
 	})
 
-	it('Should win the player, when he chooses Scissor and House choose Paper', () => {
-		const playerChoose = 'Scissor'
+	it('Should win the player, when he chooses Scissors and House choose Paper', () => {
+		const playerChoose = 'Scissors'
 		const houseChoose = 'Paper'
 
 		const result = RockPaperScissorLogic(playerChoose, houseChoose)
@@ -40,14 +40,14 @@ describe('Testing the logic of the method RockPaperScissor', () => {
 		expect(result).toBe('House Wins')
 	})
 
-	it('Should win the House, when he chooses Scissor and Player choose Paper', () => {
-		const result = RockPaperScissorLogic('Paper', 'Scissor')
+	it('Should win the House, when he chooses Scissors and Player choose Paper', () => {
+		const result = RockPaperScissorLogic('Paper', 'Scissors')
 
 		expect(result).toBe('House Wins')
 	})
 
-	it('Should win the House, when he chooses Rock and Player choose Scissor', () => {
-		const result = RockPaperScissorLogic('Scissor', 'Rock')
+	it('Should win the House, when he chooses Rock and Player choose Scissors', () => {
+		const result = RockPaperScissorLogic('Scissors', 'Rock')
 
 		expect(result).toBe('House Wins')
 	})
