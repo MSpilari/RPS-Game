@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { DefaultWrapper } from '../../components/wrappers/Default'
 import { Scoreboard } from '../../components/UI/Scoreboard'
 import { PlayerChoices } from '../../components/UI/PlayerChoices'
+import { PlayerChose } from '../../components/UI/PlayerChose'
 import { Footer } from '../../components/UI/Footer'
 import { MainWrapper } from './styles'
 
@@ -20,10 +21,10 @@ const RockPaperScissors = () => {
 				)}
 
 				{playerChoice !== null && houseChoice === null && (
-					<>
-						<label>{playerChoice}</label>
-						<label>House didn't choose yet</label>
-					</>
+					<PlayerChose
+						playerPick={playerChoice}
+						handleHousePick={setHouseChoice}
+					/>
 				)}
 
 				{playerChoice !== null && houseChoice !== null && (
