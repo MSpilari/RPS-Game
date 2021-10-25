@@ -13,7 +13,7 @@ const ButtonStyled = styled.button`
 	grid-area: ${({ name }) => {
 		if (name === 'paper') return 'a'
 		else if (name === 'scissors') return 'c'
-		else return 'e'
+		else if (name === 'rock') return 'e'
 	}};
 
 	@media screen and (max-width: 570px) {

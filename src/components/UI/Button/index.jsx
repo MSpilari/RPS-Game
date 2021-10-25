@@ -12,7 +12,7 @@ const Button = ({ name, ...props }) => {
 	else if (name === 'paper') img = PaperLogo
 	else if (name === 'scissors') img = ScissorLogo
 	else if (name === 'lizard') img = LizardLogo
-	else img = SpockLogo
+	else if (name === 'spock') img = SpockLogo
 
 	return (
 		<ButtonStyled name={name} {...props}>
