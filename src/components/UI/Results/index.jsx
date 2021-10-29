@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
 
-import { Button } from '../Button'
 import { RockPaperScissorLogic } from '../../../utils/RockPaperScissors'
 import { ScoreContext } from '../../../providers/ScoreProvider'
 
@@ -9,7 +8,9 @@ import {
 	TitlesWrapper,
 	ConclusionWrapper,
 	PlayAgainWrapper,
-	PlayAgainButton
+	PlayAgainButton,
+	PlayerButton,
+	HouseButton
 } from './styles'
 
 const Results = ({
@@ -42,7 +43,7 @@ const Results = ({
 				<h2>House choose</h2>
 			</TitlesWrapper>
 			<ConclusionWrapper>
-				<Button name={playerPick.toLowerCase()} />
+				<PlayerButton name={playerPick.toLowerCase()} />
 				{result !== null && (
 					<PlayAgainWrapper>
 						<h1>{result}</h1>
@@ -51,7 +52,7 @@ const Results = ({
 						</PlayAgainButton>
 					</PlayAgainWrapper>
 				)}
-				<Button name={housePick.toLowerCase()} />
+				<HouseButton name={housePick.toLowerCase()} />
 			</ConclusionWrapper>
 		</ResultWrapper>
 	)

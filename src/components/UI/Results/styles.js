@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Button } from '../Button'
 
 const ResultWrapper = styled.section`
 	width: 100%;
@@ -19,6 +20,24 @@ const ConclusionWrapper = styled.div`
 	width: 70%;
 	justify-content: space-around;
 	margin: 20px auto;
+
+	@media screen and (max-width: 768px) {
+		display: grid;
+		width: 100%;
+		grid-template-areas:
+			'button1 button2'
+			'button1 button2'
+			'result result'
+			'result result';
+	}
+`
+
+const PlayerButton = styled(Button)`
+	grid-area: button1;
+`
+
+const HouseButton = styled(Button)`
+	grid-area: button2;
 `
 
 const PlayAgainWrapper = styled.div`
@@ -27,6 +46,11 @@ const PlayAgainWrapper = styled.div`
 	align-items: center;
 	color: white;
 	font-size: 50px;
+
+	@media screen and (max-width: 768px) {
+		grid-area: result;
+		text-align: center;
+	}
 `
 const PlayAgainButton = styled.button`
 	background-color: white;
@@ -51,5 +75,7 @@ export {
 	TitlesWrapper,
 	ConclusionWrapper,
 	PlayAgainWrapper,
-	PlayAgainButton
+	PlayAgainButton,
+	PlayerButton,
+	HouseButton
 }
