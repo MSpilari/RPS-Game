@@ -6,6 +6,7 @@ import { PlayerChoices } from '../../components/UI/PlayerChoices'
 import { PlayerChose } from '../../components/UI/PlayerChose'
 import { Footer } from '../../components/UI/Footer'
 import { Results } from '../../components/UI/Results'
+import { Backdrop } from '../../components/UI/Backdrop'
 
 import { ScoreContext } from '../../providers/ScoreProvider'
 
@@ -39,6 +40,7 @@ const RockPaperScissors = () => {
 					/>
 				)}
 			</MainWrapper>
+			<Backdrop />
 			<Footer />
 		</DefaultWrapper>
 	)
