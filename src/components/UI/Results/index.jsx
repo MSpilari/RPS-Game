@@ -39,11 +39,14 @@ const Results = ({
 	return (
 		<ResultWrapper>
 			<TitlesWrapper>
-				<h2>You choose</h2>
-				<h2>House choose</h2>
+				<h2>You picked</h2>
+				<h2>House picked</h2>
 			</TitlesWrapper>
 			<ConclusionWrapper>
-				<PlayerButton name={playerPick.toLowerCase()} />
+				<PlayerButton
+					isTheWinner={result === 'Player Wins'}
+					name={playerPick.toLowerCase()}
+				/>
 				{result !== null && (
 					<PlayAgainWrapper>
 						<h1>{result}</h1>
@@ -52,7 +55,10 @@ const Results = ({
 						</PlayAgainButton>
 					</PlayAgainWrapper>
 				)}
-				<HouseButton name={housePick.toLowerCase()} />
+				<HouseButton
+					isTheWinner={result === 'House Wins'}
+					name={housePick.toLowerCase()}
+				/>
 			</ConclusionWrapper>
 		</ResultWrapper>
 	)
