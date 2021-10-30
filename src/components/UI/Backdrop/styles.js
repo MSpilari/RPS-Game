@@ -19,10 +19,26 @@ const RulesWrapper = styled.div`
 `
 
 const CloseButton = styled.button`
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.2);
 	border: none;
 	align-self: flex-end;
 	padding: 3px 5px;
+	cursor: pointer;
+	display: flex;
+	align-content: center;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.3);
+	}
 `
 
-export { BackdropWrapper, RulesWrapper, CloseButton }
+const ImageRules = styled.img`
+	width: 480px;
+	margin: 0 auto;
+
+	@media screen and (max-width: 767px) {
+		width: 280px;
+	}
+`
+
+export { BackdropWrapper, RulesWrapper, CloseButton, ImageRules }
