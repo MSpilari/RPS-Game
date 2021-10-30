@@ -7,6 +7,7 @@ import { PlayerChose } from '../../components/UI/PlayerChose'
 import { Footer } from '../../components/UI/Footer'
 import { Results } from '../../components/UI/Results'
 import { Backdrop } from '../../components/UI/Backdrop'
+import { RulesButton } from '../../components/UI/RulesButton'
 
 import { ScoreContext } from '../../providers/ScoreProvider'
 
@@ -15,7 +16,9 @@ import { MainWrapper } from './styles'
 const RockPaperScissors = () => {
 	const [playerChoice, setPlayerChoice] = useState(null)
 	const [houseChoice, setHouseChoice] = useState(null)
+	const [openBack, setOpenBack] = useState(false)
 	const { score } = useContext(ScoreContext)
+
 	return (
 		<DefaultWrapper>
 			<Scoreboard score={score} />
@@ -40,7 +43,8 @@ const RockPaperScissors = () => {
 					/>
 				)}
 			</MainWrapper>
-			<Backdrop />
+			<Backdrop isOpened={openBack} handleOpenBack={setOpenBack} />
+			<RulesButton onClick={() => setOpenBack(true)} />
 			<Footer />
 		</DefaultWrapper>
 	)
