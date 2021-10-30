@@ -2,19 +2,24 @@ import Close from '../../../assets/icon-close.svg'
 import RPSRules from '../../../assets/image-rules.svg'
 import RPSLSRules from '../../../assets/image-rules-bonus.svg'
 
-import { BackdropWrapper, CloseButton, RulesWrapper } from './styles'
+import {
+	BackdropWrapper,
+	CloseButton,
+	RulesWrapper,
+	ImageRules
+} from './styles'
 
-const Backdrop = ({ isOpened }) => {
+const Backdrop = ({ isOpened, handleOpenBack }) => {
 	const imgUrl =
-		document.location.pathname === 'original' ? RPSRules : RPSLSRules
+		document.location.pathname === '/original' ? RPSRules : RPSLSRules
 
 	return (
-		<BackdropWrapper>
+		<BackdropWrapper isOpened={isOpened}>
 			<RulesWrapper>
-				<CloseButton>
+				<CloseButton onClick={() => handleOpenBack(false)}>
 					<img src={Close} alt='Close' />
 				</CloseButton>
-				<img src={imgUrl} alt='Rules' />
+				<ImageRules src={imgUrl} alt='Rules' />
 			</RulesWrapper>
 		</BackdropWrapper>
 	)
