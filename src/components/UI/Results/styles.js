@@ -34,10 +34,28 @@ const ConclusionWrapper = styled.div`
 
 const PlayerButton = styled(Button)`
 	grid-area: button1;
+	pointer-events: none;
+	box-shadow: ${({ theme, name, isTheWinner }) =>
+		isTheWinner ? `0 0 50px 60px ${theme[name + 'Single']}` : 'none'};
+	transition: linear 0.4s;
+
+	@media screen and (max-width: 768px) {
+		box-shadow: ${({ theme, name, isTheWinner }) =>
+			isTheWinner ? `0 0 20px 30px ${theme[name + 'Single']}` : 'none'};
+	}
 `
 
 const HouseButton = styled(Button)`
 	grid-area: button2;
+	pointer-events: none;
+	box-shadow: ${({ theme, name, isTheWinner }) =>
+		isTheWinner ? `0 0 50px 60px ${theme[name + 'Single']}` : 'none'};
+	transition: linear 0.4s;
+
+	@media screen and (max-width: 768px) {
+		box-shadow: ${({ theme, name, isTheWinner }) =>
+			isTheWinner ? `0 0 20px 30px ${theme[name + 'Single']}` : 'none'};
+	}
 `
 
 const PlayAgainWrapper = styled.div`
