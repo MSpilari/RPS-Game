@@ -8,7 +8,12 @@ const allColors = {
 	spockGradient: 'hsl(189, 59%, 53%), hsl(189, 58%, 57%)',
 	darkText: 'hsl(229, 25%, 31%)',
 	scoreText: 'hsl(229, 64%, 46%)',
-	headerOutlineColor: 'hsl(217, 16%, 45%)'
+	headerOutlineColor: 'hsl(217, 16%, 45%)',
+	rockSingle: 'hsl(349, 71%, 40%)',
+	paperSingle: 'hsl(230, 89%, 40%)',
+	scissorsSingle: 'hsl(39, 89%, 30%)',
+	lizardSingle: 'hsl(261, 73%, 40%)',
+	spockSingle: 'hsl(189, 59%, 30%)'
 }
 
 const MyThemeProvider = ({ children }) => {
