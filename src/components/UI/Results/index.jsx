@@ -10,7 +10,8 @@ import {
 	PlayAgainWrapper,
 	PlayAgainButton,
 	PlayerButton,
-	HouseButton
+	HouseButton,
+	BackHome
 } from './styles'
 
 const Results = ({
@@ -19,19 +20,21 @@ const Results = ({
 	resetPlayerPick,
 	resetHousePick
 }) => {
-	const [result, setResult] = useState(null)
+	const [result, setResult] = useState('')
 
 	const { score, setScore } = useContext(ScoreContext)
 
 	const reset = () => {
 		resetPlayerPick(null)
 		resetHousePick(null)
+		sessionStorage.setItem('currentScore', score)
 	}
 
 	useEffect(() => {
 		setTimeout(() => {
 			setResult(RockPaperScissorLogic(playerPick, housePick))
 		}, 2000)
+
 		if (result === 'Player Wins') setScore(score + 1)
 		else if (result === 'House Wins') setScore(score - 1)
 	}, [playerPick, housePick, result])
@@ -47,12 +50,15 @@ const Results = ({
 					isTheWinner={result === 'Player Wins'}
 					name={playerPick.toLowerCase()}
 				/>
-				{result !== null && (
+				{result !== '' && (
 					<PlayAgainWrapper>
 						<h1>{result}</h1>
 						<PlayAgainButton onClick={() => reset()}>
 							Play Again
 						</PlayAgainButton>
+						<BackHome to='/' onClick={() => reset()}>
+							Quit Game
+						</BackHome>
 					</PlayAgainWrapper>
 				)}
 				<HouseButton
