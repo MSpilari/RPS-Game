@@ -1,20 +1,26 @@
 import styled from 'styled-components'
 
 const ButtonStyled = styled.button`
-	background-image: ${({ theme, name }) =>
-		`radial-Gradient(${theme[name + 'Gradient']})`};
-	border: none;
-	background-color: transparent;
-	outline: none;
-	border-radius: 100%;
+	width: 180px;
+	height: 160px;
 	padding: 20px 25px;
-	cursor: pointer;
-	justify-self: center;
-	grid-area: ${({ name }) => {
-		if (name === 'paper') return 'a'
-		else if (name === 'scissors') return 'c'
-		else if (name === 'rock') return 'e'
+
+	position: absolute;
+	inset: ${({ name }) => {
+		if (name === 'paper') return '27px 0px 0px 140px'
+		else if (name === 'scissors') return '27px 0px 0px 372px'
+		else if (name === 'rock') return '215px 0px 0px 262px'
 	}};
+	background: ${({ theme, name }) =>
+			`radial-Gradient(${theme[name + 'Gradient']})`}
+		transparent;
+
+	border: none;
+	border-radius: 100%;
+
+	outline: none;
+	cursor: pointer;
+
 	box-shadow: 0 10px 0px 0 ${({ theme, name }) => `${theme[name + 'Single']}`};
 	transition: linear 0.4s;
 
@@ -23,8 +29,16 @@ const ButtonStyled = styled.button`
 			${({ theme, name }) => `${theme[name + 'Single']}`};
 	}
 
-	@media screen and (max-width: 570px) {
+	@media screen and (max-width: 767px) {
+		width: 140px;
+		height: 135px;
 		padding: 14px 19px;
+
+		inset: ${({ name }) => {
+			if (name === 'paper') return '27px 0px 0px 3px'
+			else if (name === 'scissors') return '27px 0px 0px 165px'
+			else if (name === 'rock') return '215px 0px 0px 84px'
+		}};
 	}
 `
 

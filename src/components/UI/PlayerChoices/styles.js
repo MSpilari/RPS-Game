@@ -1,26 +1,27 @@
 import styled from 'styled-components'
 import RPSBg from '../../../assets/bg-triangle.svg'
+import RPSLSBg from '../../../assets/bg-pentagon.svg'
 
 const PlayerChoicesWrapper = styled.section`
-	width: 100%;
-	display: grid;
+	width: 100vw;
+	height: 100%;
+
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	grid-template-areas:
-		'a b c'
-		'd e f';
-	background-image: url(${RPSBg});
-	background-repeat: no-repeat;
-	background-position: 50% 250%;
 
-	@media screen and (max-width: 570px) {
-		background-image: url(${RPSBg});
-		column-gap: 20px;
-		grid-template-areas:
-			'a c'
-			'e e';
-		background-position: 50% 100%;
-		background-size: 230px;
+	background: ${() =>
+			document.location.pathname === '/bonus'
+				? `url(${RPSLSBg})`
+				: `url(${RPSBg})`}
+		no-repeat center;
+	position: relative;
+
+	@media screen and (max-width: 767px) {
+		background-size: 305px 277px;
+		max-width: 300px;
 	}
 `
 
