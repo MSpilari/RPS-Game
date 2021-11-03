@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from '../Button'
 
@@ -63,11 +64,18 @@ const PlayAgainWrapper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	color: white;
-	font-size: 50px;
+	width: 500px;
+
+	h1 {
+		font-size: 50px;
+	}
 
 	@media screen and (max-width: 768px) {
 		grid-area: result;
 		text-align: center;
+		width: 100%;
+
+		margin-top: 20px;
 	}
 `
 const PlayAgainButton = styled.button`
@@ -82,9 +90,27 @@ const PlayAgainButton = styled.button`
 	padding: 10px 20px;
 	cursor: pointer;
 	margin: 3px 0;
+	text-transform: uppercase;
 
 	&:hover {
 		background-color: wheat;
+	}
+`
+
+const BackHome = styled(Link)`
+	color: ${({ theme }) => theme.headerOutlineColor};
+	border: 2px solid ${({ theme }) => theme.headerOutlineColor};
+	padding: 10px 15px;
+	text-decoration: none;
+	border-radius: 8px;
+	font-size: 18px;
+	width: 70%;
+	text-align: center;
+	text-transform: uppercase;
+
+	&:hover {
+		color: ${({ theme }) => theme.darkText};
+		border: 2px solid ${({ theme }) => theme.darkText};
 	}
 `
 
@@ -95,5 +121,6 @@ export {
 	PlayAgainWrapper,
 	PlayAgainButton,
 	PlayerButton,
-	HouseButton
+	HouseButton,
+	BackHome
 }
