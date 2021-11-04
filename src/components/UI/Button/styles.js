@@ -7,9 +7,17 @@ const ButtonStyled = styled.button`
 
 	position: absolute;
 	inset: ${({ name }) => {
-		if (name === 'paper') return '27px 0px 0px 140px'
-		else if (name === 'scissors') return '27px 0px 0px 372px'
-		else if (name === 'rock') return '215px 0px 0px 262px'
+		if (document.location.pathname === '/bonus') {
+			if (name === 'paper') return '114px 0px 0px 420px'
+			else if (name === 'scissors') return '14px 0px 0px 258px'
+			else if (name === 'rock') return '285px 0px 0px 367px'
+			else if (name === 'lizard') return '285px 0px 0px 163px'
+			else if (name === 'spock') return '114px 0px 0px 97px'
+		} else {
+			if (name === 'paper') return '27px 0px 0px 140px'
+			else if (name === 'scissors') return '27px 0px 0px 372px'
+			else if (name === 'rock') return '215px 0px 0px 262px'
+		}
 	}};
 	background: ${({ theme, name }) =>
 			`radial-Gradient(${theme[name + 'Gradient']})`}
@@ -35,9 +43,17 @@ const ButtonStyled = styled.button`
 		padding: 14px 19px;
 
 		inset: ${({ name }) => {
-			if (name === 'paper') return '27px 0px 0px 3px'
-			else if (name === 'scissors') return '27px 0px 0px 165px'
-			else if (name === 'rock') return '215px 0px 0px 84px'
+			if (document.location.pathname === '/bonus') {
+				if (name === 'paper') return '135px 0px 0px 164px'
+				else if (name === 'scissors') return '10px 0px 0px 83px'
+				else if (name === 'rock') return '285px 0px 0px 152px'
+				else if (name === 'lizard') return '285px 0px 0px 0px'
+				else if (name === 'spock') return '135px 0px 0px 0px'
+			} else {
+				if (name === 'paper') return '27px 0px 0px 3px'
+				else if (name === 'scissors') return '27px 0px 0px 165px'
+				else if (name === 'rock') return '215px 0px 0px 84px'
+			}
 		}};
 	}
 `
