@@ -39,6 +39,7 @@ const PlayerButton = styled(Button)`
 	box-shadow: ${({ theme, name, isTheWinner }) =>
 		isTheWinner ? `0 0 50px 60px ${theme[name + 'Single']}` : 'none'};
 	transition: linear 0.4s;
+	position: unset;
 
 	@media screen and (max-width: 768px) {
 		box-shadow: ${({ theme, name, isTheWinner }) =>
@@ -52,6 +53,7 @@ const HouseButton = styled(Button)`
 	box-shadow: ${({ theme, name, isTheWinner }) =>
 		isTheWinner ? `0 0 50px 60px ${theme[name + 'Single']}` : 'none'};
 	transition: linear 0.4s;
+	position: unset;
 
 	@media screen and (max-width: 768px) {
 		box-shadow: ${({ theme, name, isTheWinner }) =>
