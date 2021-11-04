@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 
 import { RockPaperScissorLogic } from '../../../utils/RockPaperScissors'
+import { RockPaperLizardLogic } from '../../../utils/RockPaperLizard'
 import { ScoreContext } from '../../../providers/ScoreProvider'
 
 import {
@@ -32,7 +33,9 @@ const Results = ({
 
 	useEffect(() => {
 		setTimeout(() => {
-			setResult(RockPaperScissorLogic(playerPick, housePick))
+			document.location.pathname === '/original'
+				? setResult(RockPaperScissorLogic(playerPick, housePick))
+				: setResult(RockPaperLizardLogic(playerPick, housePick))
 		}, 2000)
 
 		if (result === 'Player Wins') setScore(score + 1)
