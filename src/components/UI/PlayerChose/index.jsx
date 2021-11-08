@@ -13,7 +13,9 @@ const PlayerChose = ({ playerPick, handleHousePick }) => {
 	useEffect(() => {
 		setTimeout(() => {
 			const path = document.location.pathname
-			handleHousePick(HouseChoice(0, 2, path))
+			path === '/original'
+				? handleHousePick(HouseChoice(0, 2, path))
+				: handleHousePick(HouseChoice(0, 4, path))
 		}, 5000)
 	}, [handleHousePick])
 
