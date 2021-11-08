@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 import { RockPaperScissorLogic } from '../../../utils/RockPaperScissors'
 import { RockPaperLizardLogic } from '../../../utils/RockPaperLizard'
@@ -23,6 +23,8 @@ const Results = ({
 }) => {
 	const [result, setResult] = useState('')
 
+	const hasChangedTheResult = useRef(false)
+
 	const { score, setScore } = useContext(ScoreContext)
 
 	const reset = () => {
@@ -32,15 +34,21 @@ const Results = ({
 	}
 
 	useEffect(() => {
-		setTimeout(() => {
-			document.location.pathname === '/original'
-				? setResult(RockPaperScissorLogic(playerPick, housePick))
-				: setResult(RockPaperLizardLogic(playerPick, housePick))
+		!hasChangedTheResult.current &&
+			setTimeout(() => {
+				document.location.pathname === '/original'
+					? setResult(RockPaperScissorLogic(playerPick, housePick))
+					: setResult(RockPaperLizardLogic(playerPick, housePick))
 
-			if (result === 'Player Wins') setScore(score + 1)
-			else if (result === 'House Wins') setScore(score - 1)
-		}, 300)
-	}, [playerPick, housePick, result])
+				if (result === 'Player Wins') {
+					setScore(score + 1)
+					hasChangedTheResult.current = true
+				} else if (result === 'House Wins') {
+					setScore(score - 1)
+					hasChangedTheResult.current = true
+				}
+			}, 300)
+	}, [housePick, playerPick, result, score, setScore])
 
 	return (
 		<ResultWrapper>
