@@ -36,10 +36,10 @@ const Results = ({
 			document.location.pathname === '/original'
 				? setResult(RockPaperScissorLogic(playerPick, housePick))
 				: setResult(RockPaperLizardLogic(playerPick, housePick))
-		}, 2000)
 
-		if (result === 'Player Wins') setScore(score + 1)
-		else if (result === 'House Wins') setScore(score - 1)
+			if (result === 'Player Wins') setScore(score + 1)
+			else if (result === 'House Wins') setScore(score - 1)
+		}, 300)
 	}, [playerPick, housePick, result])
 
 	return (
